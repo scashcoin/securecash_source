@@ -261,7 +261,7 @@ std::shared_ptr<WalletInfo> createViewWallet(CryptoNote::WalletGreen &wallet)
 
     while (true)
     {
-        std::cout << "Public EGM address: ";
+        std::cout << "Public SCSX address: ";
 
         std::getline(std::cin, address);
         boost::algorithm::trim(address);
@@ -272,15 +272,15 @@ std::shared_ptr<WalletInfo> createViewWallet(CryptoNote::WalletGreen &wallet)
                       << "It should be 99 characters long, but it is "
                       << address.length() << " characters long!" << std::endl;
         }
-        else if (address.substr(0, 4) != "egm")
+        else if (address.substr(0, 4) != "scsx")
         {
             std::cout << WarningMsg("Invalid address! It should start with "
-                                    "\"egm\"!") << std::endl;
+                                    "\"scsx\"!") << std::endl;
         }
         else if (!CryptoNote::parseAccountAddressString(prefix, publicKeys,
                                                         address))
         {
-            std::cout << WarningMsg("Failed to parse EGM address! Ensure you "
+            std::cout << WarningMsg("Failed to parse SCSX address! Ensure you "
                                     "have entered it correctly.")
                       << std::endl;
         }
@@ -977,7 +977,7 @@ void help(bool viewWallet)
               << SuccessMsg("bc_height", 25)
               << "Show the blockchain height" << std::endl
               << SuccessMsg("balance", 25)
-              << "Display how much EGM you have" << std::endl
+              << "Display how much SCSX you have" << std::endl
               << SuccessMsg("export_keys", 25)
               << "Export your private keys" << std::endl
               << SuccessMsg("address", 25)
@@ -992,7 +992,7 @@ void help(bool viewWallet)
     if (viewWallet)
     {
         std::cout << InformationMsg("Please note you are using a view only "
-                                    "wallet, and so cannot transfer EGM.")
+                                    "wallet, and so cannot transfer SCSX.")
                   << std::endl;
     }
     else
@@ -1008,7 +1008,7 @@ void help(bool viewWallet)
                   << "Fully optimize your wallet to send large amounts"
                   << std::endl
                   << SuccessMsg("transfer", 25)
-                  << "Send EGM to someone" << std::endl;
+                  << "Send SCSX to someone" << std::endl;
     }
 }
 
@@ -1544,7 +1544,7 @@ ColouredMsg getPrompt(std::shared_ptr<WalletInfo> &walletInfo)
 
     std::string shortName = walletName.substr(0, promptLength);
 
-    return InformationMsg("[EGM " + shortName + "]: ");
+    return InformationMsg("[SCSX " + shortName + "]: ");
 }
 
 void connectingMsg()
@@ -1559,9 +1559,9 @@ void viewWalletMsg()
 {
     std::cout << InformationMsg("Please remember that when using a view wallet "
                                 "you can only view incoming transactions!")
-              << std::endl << "This means if you received 100 EGM and then "
-              << "sent 50 EGM, your balance would appear to still be 100 "
-              << "EGM." << std::endl
+              << std::endl << "This means if you received 100 SCSX and then "
+              << "sent 50 SCSX, your balance would appear to still be 100 "
+              << "SCSX." << std::endl
               << "To effectively use a view wallet, you should only deposit "
               << "to this wallet." << std::endl
               << "If you have since needed to withdraw, send your remaining "
