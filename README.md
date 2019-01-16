@@ -35,7 +35,7 @@ sudo apt-get install -y build-essential python-dev gcc g++ git cmake librocksdb-
 **2. Get the coin**
 
 ``
-git clone https://github.com/scashcoin/scash_source.git egamecash-daemon
+git clone https://github.com/scashcoin/scash_source.git
 ``
 
 **3. CHMOD**
@@ -43,7 +43,7 @@ git clone https://github.com/scashcoin/scash_source.git egamecash-daemon
 - navigate to:
 
 ``
-cd egamecash-daemon/external/rocksdb/build_tools
+cd scash_source/external/rocksdb/build_tools
 ``
 
 - execute the following commands:
@@ -138,7 +138,7 @@ git clone https://github.com/scashcoin/scash_source.git
 - navigate to:
 
 ``
-cd egamecash-daemon/external/rocksdb/build_tools
+cd scash_source/external/rocksdb/build_tools
 ``
 
 - execute the following commands:
@@ -225,7 +225,7 @@ cmake -G "Visual Studio 14 Win64" .. -DBOOST_ROOT=C:/local/boost_1_59_0
 - Build:
 
 ``
-MSBuild egamecash.sln /p:Configuration=Release /m
+MSBuild scash.sln /p:Configuration=Release /m
 ``
 
 _Your binaries  will be located in `..\build\src\Release` folder._
