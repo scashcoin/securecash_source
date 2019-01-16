@@ -3,16 +3,16 @@ This is the reference code for [scash (scsx)](http://scashcoin.com) cryptocurren
 ## Scash (SCSX) Cryptocurrency
 
 - Name: Scash
-Coin Abbreviation: SCSX
-Algorithm: CryptoNight
-PoW Hashing Algo: CryptoNight-Lite V1 (Variant 1)
-Difficulty algorithm: Zawy V2
-Difficulty Target: 120 Seconds
-Emission speed factor: 21
-Minimun transaction fee: 0.00000100
-Pre-mining: 15%
-P2P Port: 21000
-RPC Port: 21001
+- Coin Abbreviation: SCSX
+- Algorithm: CryptoNight
+- PoW Hashing Algo: CryptoNight-Lite V1 (Variant 1)
+- Difficulty algorithm: Zawy V2
+- Difficulty Target: 120 Seconds
+- Emission speed factor: 21
+- Minimun transaction fee: 0.00000100
+- Pre-mining: 15%
+- P2P Port: 21000
+- RPC Port: 21001
 
 ## How to compile
 
