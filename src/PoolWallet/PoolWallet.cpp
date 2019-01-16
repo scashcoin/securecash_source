@@ -1288,9 +1288,9 @@ bool pool_wallet::confirmTransaction(TransferCommand cmd, bool multiAddress) {
   std::string feeString;
 
   if (cmd.fee == 10) {
-    feeString = "0.1 EGM (minimum)";
+    feeString = "0.1 SCSX (minimum)";
   } else {
-    feeString = m_currency.formatAmount(cmd.fee) + " EGM";
+    feeString = m_currency.formatAmount(cmd.fee) + " SCSX";
   }
 
   std::string walletName = boost::filesystem::change_extension(m_wallet_file, "").string();
@@ -1299,7 +1299,7 @@ bool pool_wallet::confirmTransaction(TransferCommand cmd, bool multiAddress) {
 
   if (!multiAddress) {
     std::cout << "You are sending " << m_currency.formatAmount(cmd.dsts[0].amount)
-              << " EGM, with a fee of " << feeString << std::endl
+              << " SCSX, with a fee of " << feeString << std::endl
               << "FROM: " << walletName << std::endl
               << "TO: " << std::endl << cmd.dsts[0].address << std::endl
               << std::endl;
@@ -1311,7 +1311,7 @@ bool pool_wallet::confirmTransaction(TransferCommand cmd, bool multiAddress) {
 
     for (auto destination : cmd.dsts) {
       std::cout << "You are sending " << m_currency.formatAmount(destination.amount)
-                << " EGM" << std::endl << "FROM: " << walletName << std::endl
+                << " SCSX" << std::endl << "FROM: " << walletName << std::endl
                 << "TO: " << std::endl << destination.address << std::endl
                 << std::endl;
     }
@@ -1510,7 +1510,7 @@ bool pool_wallet::print_outputs_from_transaction(const std::vector<std::string>&
 
       found = true;
 
-      logger(INFO, GREEN) << "The transaction output of " << wtip << " EGM belongs to you!";
+      logger(INFO, GREEN) << "The transaction output of " << wtip << " SCSX belongs to you!";
     }
   }
 
@@ -1522,7 +1522,7 @@ bool pool_wallet::print_outputs_from_transaction(const std::vector<std::string>&
   {
     std::string wtip = m_currency.formatAmount(sum);
 
-    logger(INFO, GREEN) << "Outputs totalling " << wtip << " EGM were sent to your wallet!";
+    logger(INFO, GREEN) << "Outputs totalling " << wtip << " SCSX were sent to your wallet!";
   }
 
   return true;
