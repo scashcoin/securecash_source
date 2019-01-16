@@ -1,28 +1,18 @@
-This is the reference code for [egamecash](http://www.egamecash.org/) cryptocurrency.
+This is the reference code for [scash (scsx)](http://scashcoin.com) cryptocurrency.
 
-* Official homepage: [egamecash](http://www.egamecash.org/)
-* Official repository: [egamecash GitHub](https://github.com/egamecash)
-* Official Announcement thread: [egamecash BitcoinTalk](https://bitcointalk.org/index.php?topic=4458111.0)
-* Official Discord: [egamecash Discord](http://discord.gg/EmGDEQJ)
-* Official Facebook: [egamecash Facebook](https://www.facebook.com/egamecash)
-* Official Twitter: [egamecash Twitter](https://twitter.com/egamecash)
-* Official Telegram: [egamecash Telegram BR](http://t.me/egame_cash_br)
-* Official Telegram: [egamecash Telegram EN](http://t.me/egame_cash_en)
-* Official Block explorer: [egamecash Block explorer](http://explorer.egamecash.org/)
+## Scash (SCSX) Cryptocurrency
 
-
-## egamecash Cryptocurrency
-
-egamecash [EGM] is an ASIC resistant CryptoNightLite V1 algorithm based cryptocurrency. Fast transactions & privacy make this coin perfect for rewarding your workers, co-workers and colleagues for a job well done.
-
-Name: eGame Cash 
-Ticket: EGM 
-PoW Hashing Algorithm: CryptoNight-Lite V1 (ASIC Resistant)
-Max Supply: 53,000,000 
-Difficulty Target: 240 Seconds 
-Minimun transaction fee: 0.00001 
-P2P Port: 35000 
-RPC Port: 35001 
+Name: Scash
+Coin Abbreviation: SCSX
+Algorithm: CryptoNight
+PoW Hashing Algo: CryptoNight-Lite V1 (Variant 1)
+Difficulty algorithm: Zawy V2
+Difficulty Target: 120 Seconds
+Emission speed factor: 21
+Minimun transaction fee: 0.00000100
+Pre-mining: 15%
+P2P Port: 21000
+RPC Port: 21001
 
 ## How to compile
 
@@ -45,7 +35,7 @@ sudo apt-get install -y build-essential python-dev gcc g++ git cmake librocksdb-
 **2. Get the coin**
 
 ``
-git clone https://github.com/egamecash/egamecash-node-daemon.git egamecash-daemon
+git clone https://github.com/scashcoin/scash_source.git egamecash-daemon
 ``
 
 **3. CHMOD**
@@ -75,7 +65,7 @@ cd
 ``
 
 ``
-cd egamecash-daemon
+cd scash_source
 ``
 
 - prepare the build
@@ -140,7 +130,7 @@ cd
 ``
 
 ``
-git clone https://github.com/egamecash/egamecash-node-daemon.git egamecash-daemon
+git clone https://github.com/scashcoin/scash_source.git
 ``
 
 **4. CHMOD**
@@ -170,7 +160,7 @@ cd
 ``
 
 ``
-cd egamecash-daemon
+cd scash_source
 ``
 
 - prepare the build
@@ -208,7 +198,7 @@ make
 
 
 ``
-cd <egamecash-daemon>
+cd <scash_source>
 ``
 
 ``
@@ -307,13 +297,13 @@ cd
 - get the source code
 
 ``
-git clone https://github.com/egamecash/egamecash-node-daemon.git egamecash-daemon
+git clone https://github.com/scashcoin/scash_source.git
 ``
 
 - CHMOD
 
 ``
-cd egamecash-daemon/external/rocksdb/build_tools
+cd scash_source/external/rocksdb/build_tools
 ``
 
 ``
