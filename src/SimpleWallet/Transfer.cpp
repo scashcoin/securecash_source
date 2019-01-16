@@ -661,7 +661,7 @@ Maybe<uint64_t> getFee()
         std::cout << std::endl 
                   << InformationMsg("What fee do you want to use?")
                   << std::endl
-                  << "Hit enter for the default fee of 0.00001000 EGM: ";
+                  << "Hit enter for the default fee of 0.00000100 SCSX: ";
 
         std::getline(std::cin, stringAmount);
 
@@ -722,7 +722,7 @@ Maybe<uint64_t> getTransferAmount()
         std::string stringAmount;
 
         std::cout << std::endl
-                  << InformationMsg("How much EGM do you want to send?: ");
+                  << InformationMsg("How much SCSX do you want to send?: ");
 
         std::getline(std::cin, stringAmount);
 
@@ -781,7 +781,7 @@ bool parseFee(std::string feeString)
     }
     else if (fee < CryptoNote::parameters::MINIMUM_FEE)
     {
-        std::cout << WarningMsg("Fee must be at least 0.00001000 EGM!") << std::endl;
+        std::cout << WarningMsg("Fee must be at least 0.00000100 SCSX!") << std::endl;
         return false;
     }
 
@@ -824,9 +824,9 @@ bool parseAddress(std::string address)
         return false;
     }
 
-    else if (expectedPrefix == 79 && address.substr(0, 4) != "egm")
+    else if (expectedPrefix == 79 && address.substr(0, 4) != "scsx")
     {
-        std::cout << WarningMsg("Invalid address! It should start with egm!")
+        std::cout << WarningMsg("Invalid address! It should start with scsx!")
                   << std::endl << std::endl;
         return false;
     }
@@ -834,7 +834,7 @@ bool parseAddress(std::string address)
     else if (!valid)
     {
         std::cout << WarningMsg("Failed to parse address, address is not a "
-                                "valid EGM address!") << std::endl
+                                "valid SCSX address!") << std::endl
                   << std::endl;
         return false;
     }
@@ -896,7 +896,7 @@ bool parseAmount(std::string amountString)
         std::cout << WarningMsg("Failed to parse amount! Ensure you entered "
                                 "the value correctly.")
                   << std::endl
-                  << "Please note, the minimum you can send is 0.00000001 EGM,"
+                  << "Please note, the minimum you can send is 0.00000001 SCSX,"
                   << std::endl
                   << "and you can only use 8 decimal places."
                   << std::endl;
