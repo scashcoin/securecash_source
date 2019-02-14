@@ -1,8 +1,8 @@
 This is the reference code for [scash (scsx)](http://scashcoin.com) cryptocurrency.
 
-## Scash (SCSX) Cryptocurrency
+## Secure Cash (SCSX) Cryptocurrency
 
-- Name: Scash
+- Name: Secure Cash
 - Coin Abbreviation: SCSX
 - Algorithm: CryptoNight
 - PoW Hashing Algo: CryptoNight-Lite V1 (Variant 1)
