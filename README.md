@@ -1,4 +1,4 @@
-This is the reference code for [scash (scsx)](http://scashcoin.com) cryptocurrency.
+This is the reference code for [secure cash (scsx)](http://scashcoin.com) cryptocurrency.
 
 ## Secure Cash (SCSX) Cryptocurrency
 
@@ -35,7 +35,7 @@ sudo apt-get install -y build-essential python-dev gcc g++ git cmake librocksdb-
 **2. Get the coin**
 
 ``
-git clone https://github.com/scashcoin/scash_source.git
+git clone https://github.com/scashcoin/securecash_source.git
 ``
 
 **3. CHMOD**
@@ -43,7 +43,8 @@ git clone https://github.com/scashcoin/scash_source.git
 - navigate to:
 
 ``
-cd scash_source/external/rocksdb/build_tools
+cd securecash_source/external/rocksdb/build_tools
+
 ``
 
 - execute the following commands:
