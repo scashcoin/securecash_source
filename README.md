@@ -47,6 +47,7 @@ git clone https://github.com/scashcoin/securecash_source.git
  ``
 chmod +x external/rocksdb/build_tools/build_detect_platform
 ``
+
 ``
 chmod +x external/rocksdb/build_tools/version.sh
 ``
