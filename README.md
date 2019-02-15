@@ -31,6 +31,7 @@ sudo apt-get update
 ``
 git clone https://github.com/scashcoin/dependencies.git
 ``
+
 ``
 bash install_dependencies.sh
 ``
