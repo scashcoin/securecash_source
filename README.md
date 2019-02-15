@@ -29,8 +29,10 @@ sudo apt-get update
 - get all dependencies
 
 ``
-sudo apt-get install -y build-essential python-dev gcc g++ git cmake librocksdb-dev libboost-all-dev
+git clone https://github.com/scashcoin/dependencies.git
 ``
+bash install_dependencies.sh
+
 
 **2. Get the coin**
 
