@@ -3,7 +3,7 @@
 
 #define PROJECT_NAME "scashcoin"
 #define PROJECT_SITE "http://scashcoin.com"
-#define PROJECT_COPYRIGHT "Copyright 2019, The Scash Developers"
+#define PROJECT_COPYRIGHT "Copyright 2019, The Secure Cash Developers"
 #define APP_VER_MAJOR 1
 #define APP_VER_MINOR 1
 #define APP_VER_REV 0
