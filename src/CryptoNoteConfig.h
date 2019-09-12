@@ -136,5 +136,5 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
-const char* const SEED_NODES[] = { "54.39.98.224:21000", "140.82.27.130:21000", "149.28.109.41:21000", "149.28.106.228:21000", "144.202.44.193:21000" };
+const char* const SEED_NODES[] = { "54.39.98.224:21000", "167.114.129.86:21000", "173.212.213.207:21000", "144.202.44.193:21000" };
 } // CryptoNote
