@@ -5,6 +5,7 @@ This is the reference code for [secure cash (scsx)](http://scashcoin.com) crypto
 - Name: Secure Cash
 - Coin Abbreviation: SCSX
 - Algorithm: CryptoNight
+- Maximum Supply: 300,000 SCSX
 - PoW Hashing Algo: CryptoNight-Lite V1 (Variant 1)
 - Difficulty algorithm: Zawy V2
 - Difficulty Target: 120 Seconds
