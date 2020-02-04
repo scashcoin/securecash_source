@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2018, The egamecash developers
+Copyright (C) 2018, The securecash developers
 Copyright (C) 2018, The TurtleCoin developers
 
 This program is free software: you can redistribute it and/or modify
@@ -154,7 +154,7 @@ Config parseArguments(int argc, char **argv)
 
 void versionMessage()
 {
-    std::cout << "egamecash v" << PROJECT_VERSION << " Simplewallet"
+    std::cout << "securecash v" << PROJECT_VERSION << " Simplewallet"
               << std::endl;
 }
 

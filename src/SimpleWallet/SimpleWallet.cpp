@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2018, The egamecash developers
+Copyright (C) 2018, The securecash developers
 Copyright (C) 2018, The TurtleCoin developers
 
 This program is free software: you can redistribute it and/or modify
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     System::Dispatcher localDispatcher;
     System::Dispatcher *dispatcher = &localDispatcher;
 
-    /* Our connection to egamecashd */
+    /* Our connection to scashcoind */
     std::unique_ptr<CryptoNote::INode> node(
         new CryptoNote::NodeRpcProxy(config.host, config.port, 
                                      logger.getLogger()));
@@ -132,15 +132,15 @@ void run(CryptoNote::WalletGreen &wallet, CryptoNote::INode &node,
 
     while (node.getLastKnownBlockHeight() == 0)
     {
-        std::cout << WarningMsg("It looks like egamecashd isn't open!")
+        std::cout << WarningMsg("It looks like scashcoind isn't open!")
                   << std::endl << std::endl
-                  << WarningMsg("Ensure egamecashd is open and has finished "
+                  << WarningMsg("Ensure scashcoind is open and has finished "
                                 "initializing.")
                   << std::endl
                   << WarningMsg("If it's still not working, try restarting "
-                                "egamecashd. The daemon sometimes gets stuck.") 
+                                "scashcoind. The daemon sometimes gets stuck.") 
                   << std::endl
-                  << WarningMsg("Alternatively, perhaps egamecashd can't "
+                  << WarningMsg("Alternatively, perhaps scashcoind can't "
                                 "communicate with any peers.")
                   << std::endl << std::endl
                   << WarningMsg("The wallet can't function until it can "
@@ -1099,7 +1099,7 @@ void blockchainHeight(CryptoNote::INode &node, CryptoNote::WalletGreen &wallet)
     if (localHeight == 0 && remoteHeight == 0)
     {
         std::cout << WarningMsg("Looks like you don't have "
-                                "egamecashd open!")
+                                "scashcoind open!")
                   << std::endl;
     }
     else if (walletHeight + 1000 < remoteHeight && localHeight == remoteHeight)
@@ -1181,7 +1181,7 @@ CryptoNote::BlockDetails getBlock(uint32_t blockHeight,
 {
     CryptoNote::BlockDetails block;
 
-    /* No connection to egamecashd */
+    /* No connection to scashcoind */
     if (node.getLastKnownBlockHeight() == 0)
     {
         return block;
@@ -1243,7 +1243,7 @@ void printOutgoingTransfer(CryptoNote::WalletTransaction t,
         std::cout << WarningMsg("Payment ID: " + paymentID) << std::endl;
     }
 
-    /* Couldn't get timestamp, maybe old node or egamecashd closed */
+    /* Couldn't get timestamp, maybe old node or scashcoind closed */
     if (blockTime != "")
     {
         std::cout << WarningMsg("Timestamp: " + blockTime) << std::endl;
@@ -1271,7 +1271,7 @@ void printIncomingTransfer(CryptoNote::WalletTransaction t,
         std::cout << SuccessMsg("Payment ID: " + paymentID) << std::endl;
     }
 
-    /* Couldn't get timestamp, maybe old node or egamecashd closed */
+    /* Couldn't get timestamp, maybe old node or scashcoind closed */
     if (blockTime != "")
     {
         std::cout << SuccessMsg("Timestamp: " + blockTime) << std::endl;
@@ -1384,7 +1384,7 @@ void findNewTransactions(CryptoNote::INode &node,
 
     if (localHeight != remoteHeight)
     {
-        std::cout << "Your egamecashd isn't fully synced yet!" << std::endl
+        std::cout << "Your scashcoind isn't fully synced yet!" << std::endl
                   << "Until you are fully synced, you won't be able to send "
                   << "transactions,"
                   << std::endl
@@ -1455,9 +1455,9 @@ void findNewTransactions(CryptoNote::INode &node,
             if (stuckCounter > 20)
             {
                 std::string warning =
-                    "Syncing may be stuck. Try restarting egamecashd.\n"
+                    "Syncing may be stuck. Try restarting scashcoind.\n"
                     "If this persists, visit "
-                    "https://discord.gg/exXhu4a for support.";
+                    "https://discord.gg/jcFR7Yt for support.";
                 std::cout << WarningMsg(warning) << std::endl;
             }
             else if (stuckCounter > 19)
@@ -1549,7 +1549,7 @@ ColouredMsg getPrompt(std::shared_ptr<WalletInfo> &walletInfo)
 
 void connectingMsg()
 {
-    std::cout << std::endl << "Making initial contact with egamecashd."
+    std::cout << std::endl << "Making initial contact with scashcoind."
               << std::endl
               << "Please wait, this sometimes can take a long time..."
               << std::endl << std::endl;

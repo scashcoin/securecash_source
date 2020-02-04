@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2018, The egamecash developers
+Copyright (C) 2018, The securecash developers
 Copyright (C) 2018, The TurtleCoin developers
 
 This program is free software: you can redistribute it and/or modify

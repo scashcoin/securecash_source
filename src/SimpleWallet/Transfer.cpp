@@ -1,6 +1,6 @@
 /*
 Copyright (C) 2018, The TurtleCoin developers
-Copyright (C) 2018, The egamecash developers
+Copyright (C) 2018, The securecash developers
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -577,7 +577,7 @@ void doTransfer(uint16_t mixin, std::string address, uint64_t amount,
             {
                 std::cout << WarningMsg("Couldn't connect to the network to "
                                         "send the transaction!") << std::endl
-                          << "Ensure egamecashd or the remote node you are "
+                          << "Ensure scashcoind or the remote node you are "
                           << "using is open and functioning." << std::endl;
             }
             else if (retried)
