@@ -243,7 +243,7 @@ bool CryptoNoteProtocolHandler::process_payload_sync_data(const CORE_SYNC_DATA& 
     int64_t diff = static_cast<int64_t>(hshd.current_height) - static_cast<int64_t>(get_current_blockchain_height());
 
     logger(diff >= 0 ? (is_inital ? Logging::INFO : Logging::DEBUGGING) : Logging::TRACE, Logging::BRIGHT_GREEN) << context <<
-      "Your egamecash node is syncing with the network. You are "
+      "Your securecash node is syncing with the network. You are "
       // << get_current_blockchain_height() << " -> " << hshd.current_height
       << std::abs(diff) << " blocks (" << std::abs(diff) / (24 * 60 * 60 / m_currency.difficultyTarget()) << " days) "
       << (diff >= 0 ? std::string("behind") : std::string("ahead of")) << " the network. " << std::endl;
@@ -586,10 +586,10 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
     logger(Logging::INFO)
       << ENDL ;
       logger(INFO, WHITE) << "===[ info ]=============================" << ENDL ;
-      logger(INFO, WHITE) << " Always exit egamecashd and Simplewallet with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
+      logger(INFO, WHITE) << " Always exit scashcoind and Simplewallet with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
       logger(INFO, WHITE) << " Use the \"help\" command to see a list of available commands." << ENDL ;
       logger(INFO, WHITE) << " Use the \"export_keys\" command in Simplewallet to display your keys for restoring a corrupted wallet." << ENDL ;
-      logger(INFO, WHITE) << " If you need more assistance, visit the #HELP channel in the egamecash Discord Chat - https://discord.gg/exXhu4a" << ENDL ;
+      logger(INFO, WHITE) << " If you need more assistance, visit the #HELP channel in the securecash Discord Chat - https://discord.gg/jcFR7Yt" << ENDL ;
       logger(INFO, WHITE) << "===================================================" << ENDL << ENDL ;
 
     m_observerManager.notify(&ICryptoNoteProtocolObserver::blockchainSynchronized, m_core.getTopBlockIndex());
