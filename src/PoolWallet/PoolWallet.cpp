@@ -1613,7 +1613,7 @@ int main(int argc, char* argv[]) {
 
   logManager.configure(buildLoggerConfiguration(logLevel, Common::ReplaceExtenstion(argv[0], ".log")));
 
-  std::cout << "egamecash v" << PROJECT_VERSION << " Poolwallet" << std::endl;
+  std::cout << "securecash v" << PROJECT_VERSION << " Poolwallet" << std::endl;
 
   std::cout << "Please note that usage of simplewallet/poolwallet has been "
             << "deprecated for pool usage." << std::endl;
