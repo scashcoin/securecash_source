@@ -1,4 +1,5 @@
-// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
+// Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers.
+// Copyright (c) 2019-2022, The Secure Cash developers.
 //
 // This file is part of Bytecoin.
 //
@@ -136,5 +137,5 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
-const char* const SEED_NODES[] = { "54.39.98.224:21000", "167.114.129.86:21000", "173.212.213.207:21000", "144.202.44.193:21000" };
+const char* const SEED_NODES[] = { "51.161.34.8:21000", "51.75.124.158:21000" };
 } // CryptoNote
