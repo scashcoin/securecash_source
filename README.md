@@ -12,8 +12,8 @@ This is the reference code for [secure cash (scsx)](http://scashcoin.com) crypto
 - Emission speed factor: 21
 - Minimun transaction fee: 0.00000100
 - Pre-mining: 15%
-- P2P Port: 21000
-- RPC Port: 21001
+- P2P Port: 31000
+- RPC Port: 31001
 
 ## How to compile
 
