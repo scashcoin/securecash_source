@@ -1,4 +1,4 @@
-This is the reference code for [secure cash (scsx)](http://scashcoin.com) cryptocurrency.
+This is the reference code for [secure cash (scsx)](http://scsx.org) cryptocurrency.
 
 ## Secure Cash (SCSX) Cryptocurrency
 
