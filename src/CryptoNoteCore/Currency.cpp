@@ -236,10 +236,10 @@ bool Currency::constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size
     return false;
   }
 
-		// Tax blockReward by 10 percent to R&D
+		// Tax blockReward by 15 percent to R&D
 		uint64_t feeReward;
 		uint64_t modReward;
-		feeReward = blockReward / 20;
+		feeReward = blockReward / 15;
 		blockReward -= feeReward;
 		modReward = feeReward % 2;
 		if(modReward > 0) {
