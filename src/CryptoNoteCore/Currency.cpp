@@ -238,16 +238,8 @@ bool Currency::constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size
 
 		// Tax blockReward by 15 percent to R&D
 		uint64_t feeReward;
-		uint64_t modReward;
-		feeReward = blockReward / 15;
+		feeReward = blockReward / 60;
 		blockReward -= feeReward;
-		modReward = feeReward % 2;
-		if(modReward > 0) {
-			// Not divisible by two. Taking out modReward
-			feeReward -= modReward;
-			// Give modReward back to block reward
-			blockReward += modReward;
-		}
 		// We're finished with rewards calculation
 
   std::vector<uint64_t> outAmounts;
@@ -256,8 +248,8 @@ bool Currency::constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size
     [&outAmounts](uint64_t a_dust) { outAmounts.push_back(a_dust); });
 
   if (!(1 <= maxOuts)) { logger(ERROR, BRIGHT_RED) << "max_out must be non-zero"; return false; }
-		// Give space to 2 new tx outs, if needed
-  if (maxOuts > 3) {
+		// Give space to 1 new tx outs, if needed
+  if (maxOuts > 2) {
 	maxOuts -= 2;
 	}
   while (maxOuts < outAmounts.size()) {
@@ -266,8 +258,7 @@ bool Currency::constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size
   }
 
 		// Push two tx out amounts. One for scsx project and another to research
-		outAmounts.insert(outAmounts.begin(), (feeReward / 2));
-		outAmounts.insert(outAmounts.begin(), (feeReward / 2));
+		outAmounts.insert(outAmounts.begin(), (feeReward));
 
     // Initialize Research address
     std::string addressStr = "SdjyPyCjZudVW3bdrssrb9VxGrxaFLRkPKXmwcmBGPp4WiTiHVNYQexXhnbaokrpKWPooigQMSzPddnnVxuoWgFZ1mqAtu3mF";
@@ -276,57 +267,33 @@ bool Currency::constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size
         logger(ERROR, BRIGHT_RED) << "Could note get research public key";
     }
 
-    // Initialize SCSX Project address
-    addressStr = "Sdj1HgpJoFsUR9q9paq1urVeNFhHgXMpK5rMxGNtoaGP3P5jiXkCDG1Hfa3ChYPLtHfxPw7P3TAZ4PyGxdGJNTyF1JyJc6cYZ";
-    CryptoNote::AccountPublicAddress scsxAddress;
-    if(!(CryptoNote::Currency::parseAccountAddressString(addressStr, scsxAddress))) {
-        logger(ERROR, BRIGHT_RED) << "Could note get scsx project public key";
-    }
-
   uint64_t summaryAmounts = 0;
   for (size_t no = 0; no < outAmounts.size(); no++) {
     Crypto::KeyDerivation derivation = boost::value_initialized<Crypto::KeyDerivation>();
     Crypto::PublicKey outEphemeralPubKey = boost::value_initialized<Crypto::PublicKey>();
 
-     if(no == 0) {
-				// Generate ephemeral public key for research address
-				bool r = Crypto::generate_key_derivation(researchAddress.viewPublicKey, txkey.secretKey, derivation);
-				if (!(r)) {
-			    logger(ERROR, BRIGHT_RED)
-					<< "while creating outs: failed to generate_key_derivation("
-					<< researchAddress.viewPublicKey << ", " << txkey.secretKey << ")";
-				    return false;
-				}
-				r = Crypto::derive_public_key(derivation, 0, researchAddress.spendPublicKey, outEphemeralPubKey);
-				if (!(r)) {
-			    logger(ERROR, BRIGHT_RED)
-					<< "while creating outs: failed to research derive_public_key("
-					<< derivation << ", "
-					<< researchAddress.spendPublicKey << ")";
-				    return false;
-				}
-      } else if(no == 1) {
-				// Generate ephemeral public key for scsx project address
-				bool r = Crypto::generate_key_derivation(scsxAddress.viewPublicKey, txkey.secretKey, derivation);
-				if (!(r)) {
-					logger(ERROR, BRIGHT_RED)
-					<< "while creating outs: failed to generate_key_derivation("
-					<< scsxAddress.viewPublicKey << ", " << txkey.secretKey << ")";
-					return false;
-				}
-				r = Crypto::derive_public_key(derivation, 1, scsxAddress.spendPublicKey, outEphemeralPubKey);
-				if (!(r)) {
-					logger(ERROR, BRIGHT_RED)
-					<< "while creating outs: failed to scsx derive_public_key("
-					<< derivation << ", "
-					<< scsxAddress.spendPublicKey << ")";
-					return false;
-				}
-      } else {
-				// Generate ephemeral public keys for miner address
-				bool r = Crypto::generate_key_derivation(minerAddress.viewPublicKey, txkey.secretKey, derivation);
-				if (!(r)) {
-					logger(ERROR, BRIGHT_RED)
+     if (no == 0) {
+    // Generate ephemeral public key for research address
+    bool r = Crypto::generate_key_derivation(researchAddress.viewPublicKey, txkey.secretKey, derivation);
+    if (!r) {
+        logger(ERROR, BRIGHT_RED)
+            << "while creating outs: failed to generate_key_derivation("
+            << researchAddress.viewPublicKey << ", " << txkey.secretKey << ")";
+        return false;
+    }
+    r = Crypto::derive_public_key(derivation, 0, researchAddress.spendPublicKey, outEphemeralPubKey);
+    if (!r) {
+        logger(ERROR, BRIGHT_RED)
+            << "while creating outs: failed to research derive_public_key("
+            << derivation << ", " << researchAddress.spendPublicKey << ")";
+        return false;
+    }
+} else {
+    // Generate ephemeral public keys for miner address
+    bool r = Crypto::generate_key_derivation(minerAddress.viewPublicKey, txkey.secretKey, derivation);
+    if (!r) {
+        logger(ERROR, BRIGHT_RED)
+
 
         << "while creating outs: failed to generate_key_derivation("
         << minerAddress.viewPublicKey << ", " << txkey.secretKey << ")";
