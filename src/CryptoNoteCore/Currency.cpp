@@ -238,7 +238,7 @@ bool Currency::constructMinerTx(uint8_t blockMajorVersion, uint32_t height, size
 
 		// Tax blockReward by 15 percent to R&D
 		uint64_t feeReward;
-		feeReward = blockReward / 60;
+		feeReward = blockReward / 15;
 		blockReward -= feeReward;
 		// We're finished with rewards calculation
 
